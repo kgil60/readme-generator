@@ -5,6 +5,12 @@ function renderLicenseBadge(license) {
     return "";
   }
 
+  if(license.includes(" ")) {
+    let linkLicense = license.split(" ");
+    linkLicense = linkLicense.join("%20");
+    return `https://img.shields.io/badge/license-${linkLicense}-blue`;
+  }
+
   return `https://img.shields.io/badge/license-${license}-blue`;
 }
 
@@ -49,10 +55,10 @@ function generateMarkdown(data) {
 
   - [Installation](#installation)
   - [Usage](#usage)
-  - [Contribution Guidelines](#contribution)
-  - [Test Instructions](#Tests)
+  - [Contribution Guidelines](#contribution-guidelines)
+  - [Test Instructions](#test-instructions)
   - [License](#license)
-  - [Questions](#Questions)
+  - [Questions](#questions)
 
   ## Installation
 
@@ -66,7 +72,7 @@ function generateMarkdown(data) {
 
   ${data.contribution}
 
-  ## Tests
+  ## Test Instructions
 
   ${data.tests}
 

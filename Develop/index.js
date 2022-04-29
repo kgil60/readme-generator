@@ -141,7 +141,7 @@ function init() {
             return generateMarkdown(answers);
         })
         .then(readmeMarkdown => {
-            return writeToFile('README.md', readmeMarkdown);
+            return writeToFile('./generated/generatedREADME.md', readmeMarkdown);
         })
         .then(fileWriteResponse => {
             console.log(fileWriteResponse.message)
